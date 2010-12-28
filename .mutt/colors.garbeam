@@ -1,0 +1,44 @@
+#
+# author:   thayer williams
+# website:  http://bit.ly/thayerwilliams
+#
+
+color   normal      default         default     # default colours
+color   index       green           default ~N  # new messages
+color   index       red             default ~F  # flagged messages
+color   index       cyan            default ~T  # tagged messages
+color   index       brightblack     default ~D  # deleted messages
+color   body        brightgreen     default     (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color   body        brightgreen     default     [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color   attachment  magenta         default     # attachments
+color   signature   brightblack     default     # sigs
+color   search      brightwhite     red         # highlight results
+
+color   indicator   brightwhite     black       # currently highlighted message
+color   error       red             default     # error messages
+color   status      white           black       # status line (unread msgs, current dir, etc.)
+color   markers     white           black       # shortcut statusline (q:Quit, etc.)
+color   tree        yellow          default     # tree thread arrows
+color   tilde       brightblack     default     # blank line padding
+
+color   hdrdefault  cyan            default     # default headers
+color   header      brightcyan      default     "^From:"
+color   header      brightcyan      default     "^Subject:"
+
+color   quoted      cyan            default     # quote colours
+color   quoted1     brightcyan      default
+color   quoted2     green           default
+color   quoted3     brightyellow    default
+color   quoted4     brightmagenta   default
+color   quoted5     brightred       default
+
+color   body        green           default     "^gpg: Good signature from"
+color   body        brightred       default     "^gpg: Bad signature from"
+color   body        brightred       default     "^gpg: BAD signature from"
+color   body        brightred       default     "^gpg: Note: This key has expired!"
+color   body        brightyellow    default     "^gpg: WARNING: This key is not certified with a trusted signature!"
+color   body        brightyellow    default     "^gpg:          There is no indication that the signature belongs to the owner."
+color   body        brightyellow    default     "^gpg: can't handle these multiple signatures"
+color   body        brightyellow    default     "^gpg: signature verification suppressed"
+color   body        brightyellow    default     "^gpg: invalid node with packet of type"
+

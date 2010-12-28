@@ -1,0 +1,51 @@
+# ----------------------------------------------------------------------
+# file:     ~/.gmrunrc
+# author:   Thayer Williams - http://cinderwick.ca
+# vim:enc=utf-8:nu:ai:si:et:ts=4:sts=4:sw=4:ft=sh:
+# ----------------------------------------------------------------------
+
+# terminal info 
+Terminal     =  urxvtcd
+
+TermExec     =  ${Terminal} -e
+AlwaysInTerm =  ssh telnet ftp lynx mc vi vim man htop alsamixer mutt vifm mocp ncmpc
+
+# window geometry
+Width   =   400
+Top     =   100
+Left    =   300
+
+
+# history
+History     =   512  # num of entries to save
+ShowLast    =   1    # show last cmd when invoked
+
+# autocompletion and tabbing
+ShowDotFiles =  1    # autocomplete dotfiles (1 to enable)
+TabTimeout   =  0    # ms before gmrun simulates a TAB press (0 disables)
+
+# url handlers
+
+# If the entered text is "http://www.google.com" then:
+#   - %u gets replaced with the whole URL ("http://www.google.com")
+#   - %s gets replaced with "//www.google.com".  This is useful for URL-s
+#     like "man:printf" --> %s will get replaced with "printf"
+URL_http    = firefox "%u"
+URL_ftp     = firefox "%u"
+URL_mailto  = firefox "%u"
+URL_man     = ${TermExec} 'man %s'
+URL_info    = ${TermExec} 'info %s'
+URL_file    = nautilus %s
+URL_readme  = ${TermExec} 'less /usr/doc/%s/README'
+URL_sh      = sh -c '%s'
+URL_bash    = bash -c '%s'
+
+# extension handlers
+EXT:doc,rtf = word %s
+EXT:ps      = gv %s
+EXT:pdf     = xpdf %s
+EXT:tar,gz,zip,xz,jar,rar = file-roller %s
+EXT:txt,patch,diff,conf,sh,pl,c,cc,cpp,h,java,html,htm,php,epl,tex,latex,js,css,xml,xsl,am,README,INSTALL,AUTHOR = gvim %s
+EXT:mp4,flv,avi,mpeg,mpg,wmv,asf = mplayer %s
+EXT:gif,jpg,jpeg,png,svg,bmp,tif,tga,ico = geeqie %s
+

@@ -1,0 +1,28 @@
+# file:     ~/.xpdfrc
+# author:   Thayer Williams - http://bit.ly/thayerwilliams
+
+# initial page zoom (page|width|percentage)
+initialZoom width
+
+# treat as one continuous doc with a full vertical scrollbar
+continuousView yes
+
+# launch URLs in firefox 
+urlCommand "/usr/bin/firefox %s"
+
+# launch movie annotations in mplayer
+movieCommand "/usr/bin/mplayer %s"
+
+# vim-style navigation
+bind space          any     pageDown
+bind shift-space    any     pageUp
+bind h              any     scrollLeft(16)
+bind l              any     scrollRight(16)
+bind k              any     scrollUp(16)
+bind j              any     scrollDown(16)
+bind /              any     find
+
+# set the text output options
+textEncoding UTF-8
+textEOL      unix
+

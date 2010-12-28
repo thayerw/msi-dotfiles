@@ -1,0 +1,33 @@
+
+# imap profile
+
+set folder      = imaps://imap.gmail.com:993    # default location of mailboxes
+set spoolfile   = +INBOX                    # open the +INBOX automatically (!)
+set mbox        = "+[Gmail]/All Mail"       # where read msgs are normally archived (>)
+set postponed   = "+[Gmail]/Drafts"         # store drafts here (R)
+set record      = "+[Gmail]/Sent Mail"      # store sent mail here (<)
+set header_cache = ~/.mutt/cache/headers    # cache headers here
+set message_cachedir = ~/.mutt/cache/bodies # cache message bodies here
+unset copy      # gmail saves a copy automatically so disable other copies
+unset message_cache_clean   # set occasionally to clean/sync cached headers/bodies
+set imap_keepalive = 300    # num of seconds before server is pinged to prevent timeout
+#set imap_check_subscribed = yes # fetch server-subscribed folders and add all as mailboxes
+
+# fetch our current mailbox list from here
+mailboxes = ! +ml-arch-dev +ml-suckless ~/.mail/oldmail
+
+# macros
+# ------
+macro index,pager d     "<save-message>+[Gmail]/Bin<enter>"        "move to trash"
+macro index,pager S     "<save-message>+[Gmail]/Spam<enter>"       "mark as spam"
+macro index,pager \cs   "<save-message>!<enter>"                   "mark as ham"
+
+macro index,pager gi    "<change-folder>!<enter>"                  "go to inbox"
+macro index,pager ga    "<change-folder>><enter>"                  "go to archived mail"
+macro index,pager gf    "<change-folder>+[Gmail]/Starred<enter>"   "go to flagged"
+macro index,pager gs    "<change-folder>+[Gmail]/Spam<enter>"      "go to spam"
+macro index,pager gd    "<change-folder>+[Gmail]/Drafts<enter>"    "go to drafts"
+macro index,pager go    "<change-folder><<enter>"                  "go to sent mail"
+macro index,pager gb    "<change-folder>+[Gmail]/Bin<enter>"       "go to trash"
+macro index,pager gl    "<change-folder>-<enter>"                  "go to last folder" 
+
