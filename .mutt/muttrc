@@ -4,7 +4,7 @@
 
 source ~/.mutt/aliases
 source ~/.mutt/macros
-source ~/.mutt/colors.garbeam
+source ~/.mutt/colors.lightr
 
 # identity -------------------------------------------------------------
 
