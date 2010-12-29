@@ -1,8 +1,5 @@
-# ----------------------------------------------------------------------
 # file:     ~/.gmrunrc
 # author:   Thayer Williams - http://cinderwick.ca
-# vim:enc=utf-8:nu:ai:si:et:ts=4:sts=4:sw=4:ft=sh:
-# ----------------------------------------------------------------------
 
 # terminal info 
 Terminal     =  urxvtcd
@@ -14,7 +11,6 @@ AlwaysInTerm =  ssh telnet ftp lynx mc vi vim man htop alsamixer mutt vifm mocp 
 Width   =   400
 Top     =   100
 Left    =   300
-
 
 # history
 History     =   512  # num of entries to save
@@ -44,8 +40,8 @@ URL_bash    = bash -c '%s'
 EXT:doc,rtf = word %s
 EXT:ps      = gv %s
 EXT:pdf     = xpdf %s
-EXT:tar,gz,zip,xz,jar,rar = file-roller %s
-EXT:txt,patch,diff,conf,sh,pl,c,cc,cpp,h,java,html,htm,php,epl,tex,latex,js,css,xml,xsl,am,README,INSTALL,AUTHOR = gvim %s
+EXT:tar,gz,zip,xz,jar,rar,iso = file-roller %s
+EXT:txt,patch,diff,conf,sh,pl,c,cc,cpp,h,java,html,htm,php,epl,tex,latex,js,css,xml,xsl,am,README,INSTALL,AUTHOR,xinitrc,bashrc,bash_profile,bash_logout,gmrunrc,Xresources,vimrc,muttrc, = gvim %s
 EXT:mp4,flv,avi,mpeg,mpg,wmv,asf = mplayer %s
 EXT:gif,jpg,jpeg,png,svg,bmp,tif,tga,ico = geeqie %s
 
