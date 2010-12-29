@@ -1,0 +1,50 @@
+###----------------------------------------------------------------------------
+### custom key bindings + macros
+###----------------------------------------------------------------------------
+
+bind  index,pager R     group-reply
+bind  index <left>      previous-entry
+bind  index <right>     next-entry
+bind  pager <pageup>    previous-page   
+bind  pager <pagedown>  next-page       
+bind  pager <home>      top                                 
+bind  pager gg          top                                 
+bind  pager G           bottom
+bind  index gg          first-entry
+bind  index G           last-entry
+bind  pager <end>       bottom
+bind  pager <up>        previous-line
+bind  pager <down>      next-line
+bind  pager Z           previous-line
+bind  pager z           next-line
+bind  index {           previous-thread
+bind  index }           next-thread
+bind  pager [           previous-unread
+bind  pager ]           next-unread
+
+# pressing F1 spawns ~/.mutt/manual.txt
+macro index,pager <f1> "<shell-escape>less ~/.mutt/manual.txt<enter>" "Show mutt documentation"
+
+# press ^b to view all urls in a msg
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+# Change the "From:" header before sending
+# useage: compose message, press (v) in compose menu and select an alias
+macro compose v "<edit-from>^Uidentity_<tab>"       "select from"
+
+# open the mailbox list when copying or moving mail with these shortcuts
+#macro index C   "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+#macro index M   "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+macro index,pager d   "<save-message>+trash<enter>"       "move message to the trash"
+macro index,pager S   "<save-message>+spam<enter>"        "mark message as spam"
+macro index,pager \cs "<save-message>+inbox<enter>"       "mark as ham"
+
+macro index,pager gi  "<change-folder>+inbox<enter>"      "go to inbox"
+macro index,pager gf  "<change-folder>+flagged<enter>"    "go to flagged"
+macro index,pager ga  "<change-folder>+archives<enter>"   "go to archives"
+macro index,pager gs  "<change-folder>+spam<enter>"       "go to spam"
+macro index,pager gd  "<change-folder>+drafts<enter>"     "go to drafts"
+macro index,pager go  "<change-folder>+sent<enter>"       "go to sent"
+macro index,pager gt  "<change-folder>+trash<enter>"      "go to trash"
+

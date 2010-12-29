@@ -1,0 +1,13 @@
+#   ~/.mailcap
+#   Used by mutt and other terminal applications to determine
+#   how certain MIME files should be opened
+
+#text/html; elinks -dump -force-html %s; needsterminal; copiousoutput
+text/html; lynx -dump -force_html  %s;  needsterminal; copiousoutput
+text/*; vim %s
+application/msword; antiword %s ; copiousoutput
+application/pdf; epdfview %s
+image; display %s 
+video; mplayer %s
+audio; mplayer %s
+
