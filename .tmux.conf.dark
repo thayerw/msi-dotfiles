@@ -1,0 +1,101 @@
+
+# ~/.tmux.conf
+# Thayer Williams - http://cinderwick.ca
+
+#setw -g automatic-rename off
+#set -g default-terminal "screen-256color"
+#setw -g utf8 on
+
+# set prefix key to ctrl+a until I have time to adapt
+unbind C-b
+set -g prefix C-a
+# send the prefix to client inside window (ala nested sessions)
+bind-key a send-prefix
+
+# toggle last window like screen
+bind-key C-a last-window
+
+# confirm before killing a window or the server
+bind-key k confirm kill-window
+bind-key K confirm kill-server
+
+# toggle statusbar
+bind-key b set-option status
+
+# ctrl+left/right cycles thru windows
+bind-key -n C-right next
+bind-key -n C-left prev
+
+# open a man page in new window
+bind / command-prompt "split-window 'exec man %%'"
+
+# processes
+bind '~' split-window "exec htop"
+
+# default shell command
+set -g default-command bash 
+
+# scrollback buffer n lines
+set -g history-limit 5000
+
+# listen for activity on all windows
+set -g bell-action any
+
+# on-screen time for display-panes in ms
+set -g display-panes-time 2000
+
+# start window indexing at one instead of zero
+set -g base-index 1
+
+# enable wm window titles
+set -g set-titles on
+
+# wm window title string (uses statusbar variables)
+set -g set-titles-string "tmux.#I.#W"
+
+# session initialization
+# new -s new window and session name
+new -s dublin mutt
+# another new window at 2
+neww -t 2
+# don't bother switching to 3 or 4 (-d)
+neww -d -t 3
+neww -d -t 4 mocp
+neww -d -t 5 rtorrent
+# switch back to 1 so that toggle last pane goes to 2
+selectw -t 1
+
+# statusbar --------------------------------------------------------------
+
+set -g display-time 2000
+
+# default statusbar colors
+set -g status-fg black
+set -g status-bg default
+set -g status-attr bright
+
+# default window title colors
+set-window-option -g window-status-fg black
+set-window-option -g window-status-bg default
+set-window-option -g window-status-attr bright
+
+# active window title colors
+set-window-option -g window-status-current-fg red
+set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-attr bright
+
+# command/message line colors
+set -g message-fg black
+set -g message-bg default
+set -g message-attr bright
+
+set -g status-justify centre
+#set -g status-right ""
+#set -g status-left ""
+#if '[ -z "$DISPLAY" ]' 'set -g status-left "[#[fg=green] #H #[default]]"'
+#if '[ -z "$DISPLAY" ]' 'set -g status-right "[ #[fg=magenta]#(cat /proc/loadavg | cut -d \" \" -f 1,2,3)#[default] ][ #[fg=cyan,bright]%a %Y-%m-%d %H:%M #[default]]"'
+#if '[ -z "$DISPLAY" ]' 'set -g status-right-length 50'
+set -g status-left "[#[fg=green] #H #[default]]"
+set -g status-right "[ #[fg=magenta]#(cat /proc/loadavg | cut -d \" \" -f 1,2,3)#[default] ][ #[fg=default]%a %Y-%m-%d %H:%M #[default]]"
+set -g status-right-length 50
+
