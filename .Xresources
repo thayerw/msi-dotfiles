@@ -8,7 +8,7 @@ Xft.dpi:        96
 Xft.rgba:       rgb
 Xft.autohint:   0
 Xft.hinting:    1
-Xft.hintstyle:  hintslight
+Xft.hintstyle:  hintfull
 Xft.antialias:  1
 Xft.lcdfilter:  lcddefault
 
@@ -17,7 +17,6 @@ Xcursor*theme:  Vanilla-DMZ-AA
 *font:     xft:monospace:style=Normal:pixelsize=13
 *boldFont:     xft:monospace:style=Normal:pixelsize=13
 !*font:      -*-dina-medium-r-*-*-15-*-*-*-*-*-*-*
-!*boldFont:  -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
 
 urxvt*urgentOnBell:     true
 urxvt*internalBorder:   1
