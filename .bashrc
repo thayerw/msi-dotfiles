@@ -149,7 +149,6 @@ alias grep="grep -n"
 alias sv="sudo vim"
 alias hist="history | grep $1"              # search cmd history
 alias df="df -h"                            # human-readable sizes
-alias sizeof='du -sh'                       # print total size (recursively) of pwd
 alias du="du -h"                            # print total size of pwd and subdirs
 alias ducks="du -cksh * |sort -rn |head -10" # print top 10 largest files in pwd
 alias free="free -m"                        # show sizes in MB
@@ -158,19 +157,12 @@ alias sps="ps aux | grep -v grep | grep"    # search and display processes by ke
 alias fixres="xrandr --size 1024x600"       # reset resolution
 alias ntup="sudo /usr/bin/ntpdate time-a.nist.gov"  # update time
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""' # get xprop CLASS and NAME
-alias getip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1"
-alias myip='lynx -dump http://tnx.nl/ip'
+alias getip='lynx -dump http://tnx.nl/ip'
 alias psm="echo '%CPU %MEM   PID COMMAND' && ps hgaxo %cpu,%mem,pid,comm | sort -nrk1 | head -n 10 | sed -e 's/-bin//' | sed -e 's/-media-play//'"
 alias timer='time read -p "Press enter to stop"'
-alias bb="bashburn"
 alias blankcd="wodim -v dev=/dev/cdrw -blank=fast -eject"
 alias stripx="find . -type f -print0 | xargs -0 chmod a-x"
-alias updatefonts='sudo fc-cache -vf'
 alias t="todo.sh -d $HOME/.todo"
-alias scan="sudo iwlist wlan0 scan | grep ESSID"
-alias scanfull="sudo iwlist wlan0 scan"
-alias nokiam="sudo mount -o rw,users,noauto,flush,quiet,noatime,dmask=000,fmask=111"
-alias mp="mplayer"
 
 
 # functions
@@ -183,10 +175,6 @@ pacsearch() {
   -e 's#community/.*#\\033[0;32m&\\033[1;30m#g' \
   -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[1;30m#g' )"
 }
-
-# settitle - set the window title
-# usage: settitle foo
-function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
 
 # extract - archive extractor
 # usage: extract <file>
@@ -231,43 +219,6 @@ define() {
   rm -f /tmp/templookup.txt
 }
 
-# absbuild - quickly build and upgrade a pkg from ABS
-# usage: absbuild <pkgname>
-absbuild() {
-  ABSPATH=`find /var/abs -type d -name $1`
-  mkdir -p $HOME/dev/abs/$1 || return 1
-  cp -R $ABSPATH/* $HOME/dev/abs/$1
-  cd $HOME/dev/abs/$1
-  $EDITOR PKGBUILD
-}
-
-# absfind - quickly locate and cat an ABS PKGBUILD
-# usage: absfind <pkgname>
-absfind() {
-  ABSPATH=`find /var/abs -type d -name $1`
-  echo -e "\n ==> $ABSPATH\n"
-  cat $ABSPATH/PKGBUILD
-}
-
-
-# send public key to remote server
-# usage: sendkey <user@remotehost>
-function sendkey () {
-    if [ $# -eq 1 ]; then
-        local key=""
-        if [ -f $HOME/.ssh/id_dsa.pub ]; then
-            key=$HOME/.ssh/id_dsa.pub
-        elif [ -f $HOME/.ssh/id_rsa.pub ]; then
-            key=$HOME/.ssh/id_rsa.pub
-        else
-            echo "No public key found" >&2
-            return 1
-        fi
-        ssh $1 'cat >> $HOME/.ssh/authorized_keys' < $key
-    fi
-}
-
-
-# load local settings
+# load local settings (private stuff, etc.)
 [ -e $HOME/.bash-local ] && source $HOME/.bash-local
 
