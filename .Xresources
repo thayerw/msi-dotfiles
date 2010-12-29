@@ -41,7 +41,6 @@ urxvt*transparent:      false
 urxvt*fading:           0
 urxvt*shading:          5
 urxvt*tint:             black
-!urxvt*background:       rgba:eeee/eeee/eeee/dddd
 
 ! keepassx colourscheme
 keepassx*background:    #cfcfcf
