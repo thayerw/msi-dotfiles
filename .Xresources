@@ -23,7 +23,9 @@ urxvt*internalBorder:   1
 urxvt*saveLines:        32767
 urxvt*visualBell:       true
 urxvt*jumpScroll:       false
-urxvt*scrollBar:        false
+urxvt*scrollBar:        true
+urxvt*scrollstyle:      xterm
+urxvt*scrollBar_right:  true
 urxvt*scrollTtyKeypress:true
 urxvt*scrollWithBuffer: false
 urxvt*scrollTtyOutput:  false
@@ -46,7 +48,7 @@ xterm*dynamicColors:    true
 xterm*utf8:             2
 xterm*eightBitInput:    true
 xterm*saveLines:        32767
-xterm*scrollBar:        false
+xterm*scrollBar:        true
 xterm*scrollTtyKeypress:true
 xterm*scrollTtyOutput:  false
 xterm*jumpScroll:       true
