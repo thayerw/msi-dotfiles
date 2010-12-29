@@ -41,7 +41,7 @@ EXT:doc,rtf = word %s
 EXT:ps      = gv %s
 EXT:pdf     = xpdf %s
 EXT:tar,gz,zip,xz,jar,rar,iso = file-roller %s
-EXT:txt,patch,diff,conf,sh,pl,c,cc,cpp,h,java,html,htm,php,epl,tex,latex,js,css,xml,xsl,am,README,INSTALL,AUTHOR,xinitrc,bashrc,bash_profile,bash_logout,gmrunrc,Xresources,vimrc,muttrc, = gvim %s
+EXT:txt,patch,diff,conf,rc,sh,pl,c,cc,cpp,h,java,html,htm,php,epl,tex,latex,js,css,xml,xsl,am,README,INSTALL,AUTHOR,xinitrc,bashrc,bash_profile,bash_logout,gmrunrc,Xresources,vimrc,muttrc, = gvim %s
 EXT:mp4,flv,avi,mpeg,mpg,wmv,asf = mplayer %s
 EXT:gif,jpg,jpeg,png,svg,bmp,tif,tga,ico = geeqie %s
 
