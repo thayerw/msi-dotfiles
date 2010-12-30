@@ -19,29 +19,25 @@ Xcursor*theme:  Vanilla-DMZ-AA
 *boldFont:     xft:monospace:style=Normal:pixelsize=13
 !*font:      -*-dina-medium-r-*-*-15-*-*-*-*-*-*-*
 
-urxvt*urgentOnBell:     true
-urxvt*internalBorder:   1
-urxvt*saveLines:        32767
-urxvt*visualBell:       true
-urxvt*jumpScroll:       false
-urxvt*scrollBar:        true
-urxvt*scrollstyle:      xterm
-urxvt*scrollBar_right:  true
-urxvt*scrollTtyKeypress:true
-urxvt*scrollWithBuffer: false
-urxvt*scrollTtyOutput:  false
-urxvt*utmpInhibit:      true
-urxvt*print-pipe:       cat > $(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
-urxvt*perl-lib:         /usr/lib/urxvt/perl/
-urxvt*perl-ext-common:  default,matcher
-urxvt*keysym.C-Delete:  perl:matcher
-urxvt*matcher.button:   1
-urxvt*urlLauncher:      firefox
-urxvt*depth:            24
-urxvt*transparent:      false
-urxvt*fading:           0
-urxvt*shading:          0
-urxvt*tint:             black
+xterm*font:             -misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xterm*faceName:         Courier New
+xterm*faceSize:         10
+xterm*renderFont:       true
+xterm*dynamicColors:    true
+xterm*utf8:             2
+xterm*eightBitInput:    true
+xterm*saveLines:        32767
+xterm*scrollBar:        true
+xterm*rightScrollBar:   true
+xterm*scrollLines:      32767
+xterm*scrollTtyKeypress:true
+xterm*scrollTtyOutput:  false
+xterm*jumpScroll:       true
+xterm*multiScroll:      true
+xterm*cursorBlink:      false
+! match selection for URLs and emails on mouse-click
+xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:38
+xterm*trimSelection: true
 
 ! keepassx colourscheme
 keepassx*background:    #cfcfcf
