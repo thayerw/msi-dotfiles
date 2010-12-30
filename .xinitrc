@@ -10,6 +10,7 @@ xrdb -merge .Xresources
 xmodmap -e "keycode 113 = Super_L"          # reassign Alt_R to Super_L
 xmodmap -e "remove mod1 = Super_L"          # make sure X keeps it out of the mod1 group
 xmodmap ~/.xmodmaprc                        # set caps lock to ctrl
+xset +fp ~/.fonts                           # add local font path for x apps like dwm 
 xset r rate 250 60                          # keyboard repeat delay and rate
 xsetroot -cursor_name left_ptr -solid '#222'     # set root cursor and background
 nitrogen --restore
