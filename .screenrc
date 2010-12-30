@@ -1,0 +1,54 @@
+
+# ~/.screenrc
+# Thayer Williams -- http://cindewick.ca/
+
+# terminal info
+#term screen-256color
+#term xterm-256color
+termcapinfo xterm ti@:te@
+#terminfo rxvt-unicode ti@:te@:
+#termcapinfo rxvt ti@:te@    # supposed to fix mouse scrolling issues (e.g. vim)
+
+# load some apps (last listed will be focused)
+screen 9  rtorrent
+screen 8  mocp 
+screen 1  mutt
+screen -t bash 3
+screen -t bash 2
+
+# general
+altscreen on        # restore window contents after a vi session
+autodetach on       # autodetach on disconnect/close
+nethack on          # nethackish status messages
+defscrollback 5000  # default scrollback buffer
+defutf8 on          # UTF-8 char encoding
+defflow off         # disable flow control
+defbce on           # use current bg color for erased chars
+msgwait 3           # secs msgs are displayed
+defshell -bash      # dash makes it a login shell
+startup_message off # disable startup msg
+vbell off           # toggle visual bell
+vbell_msg ""
+bell_msg ""
+activity ""
+
+# statusbar
+hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
+
+# misc keybinds
+bindkey -k k; quit      #F10 to quit screen
+bindkey "^[Od" prev     # change window with ctrl-left
+bindkey "^[Oc" next     # change window with ctrl-right
+
+# find the next shell
+bind s select bash 
+
+# window numbering starts at 1
+bind c screen 1
+bind 0 select 10
+
+#let pgup/pgdn scroll under urxvt (see .Xdefaults)
+#bindkey "^[[5;2~" eval "copy" "stuff ^u"
+#bindkey -m "^[[5;2~" stuff ^u
+#bindkey -m "^[[6;2~" stuff ^d
+
