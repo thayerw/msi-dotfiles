@@ -4,7 +4,7 @@
 
 ! terminal colours
 *foreground:#555555
-*background:#eeeeee
+*background:#ffffff
 
 !black
 *color0:    #555555
@@ -30,17 +30,4 @@
 !white
 *color7:    #afafaf
 *color15:   #ffffff
-
-! alsamixer scheme
-alsamixer*background:   #eeeeee
-alsamixer*background:   #eeeeee
-alsamixer*color1:   #ff005f
-alsamixer*color9:   #ff005f
-alsamixer*color2:   #afafaf
-alsamixer*color10:  #555555
-alsamixer*color7:   #ffffff
-alsamixer*color15:  #ffffff
-alsamixer*color11:  #777777
-alsamixer*color4:   #1b1d1e
-alsamixer*scrollBar:  false
 
