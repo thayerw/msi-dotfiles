@@ -1,3 +1,4 @@
+
 ! ~/.Xdefaults
 ! Thayer Williams - http://cinderwick.ca
 
@@ -5,7 +6,7 @@
 
 ! font rendering for libxft applications (openoffice, etc.) 
 Xft.dpi:        96
-Xft.rgba:       rgb
+Xft.rgba:       none
 Xft.autohint:   0
 Xft.hinting:    1
 Xft.hintstyle:  hintfull
@@ -39,7 +40,7 @@ urxvt*urlLauncher:      firefox
 urxvt*depth:            24
 urxvt*transparent:      false
 urxvt*fading:           0
-urxvt*shading:          5
+urxvt*shading:          0
 urxvt*tint:             black
 
 ! keepassx colourscheme
@@ -93,5 +94,4 @@ XCalc*ShapeStyle:       rectangle
 ! fix a bug with the div button...and the SQRT
 xcalc.ti.button20.label: /
 xcalc.ti.button3.label: SQRT
-
 
