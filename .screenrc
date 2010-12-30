@@ -1,13 +1,8 @@
 
 # ~/.screenrc
-# Thayer Williams -- http://cindewick.ca/
+# Thayer Williams -- http://cinderwick.ca/
 
-# terminal info
-#term screen-256color
-#term xterm-256color
-termcapinfo xterm ti@:te@
-#terminfo rxvt-unicode ti@:te@:
-#termcapinfo rxvt ti@:te@    # supposed to fix mouse scrolling issues (e.g. vim)
+termcapinfo xterm ti@:te@   # supposed to fix mouse scrolling issues (e.g. vim)
 
 # load some apps (last listed will be focused)
 screen 9  rtorrent
@@ -36,9 +31,11 @@ activity ""
 hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
 
 # misc keybinds
-bindkey -k k; quit      #F10 to quit screen
-bindkey "^[Od" prev     # change window with ctrl-left
-bindkey "^[Oc" next     # change window with ctrl-right
+bindkey -k k; quit      # F10 to quit screen
+bindkey ^[[1;5D prev    # xterm: change window with ctrl-left
+bindkey ^[[1;5C next    # xterm: change window with ctrl-right
+#bindkey "^[Od" prev    # urxvt: change window with ctrl-left
+#bindkey "^[Oc" next    # urxvt: change window with ctrl-right
 
 # find the next shell
 bind s select bash 
@@ -46,9 +43,4 @@ bind s select bash
 # window numbering starts at 1
 bind c screen 1
 bind 0 select 10
-
-#let pgup/pgdn scroll under urxvt (see .Xdefaults)
-#bindkey "^[[5;2~" eval "copy" "stuff ^u"
-#bindkey -m "^[[5;2~" stuff ^u
-#bindkey -m "^[[6;2~" stuff ^d
 
