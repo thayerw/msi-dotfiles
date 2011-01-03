@@ -17,7 +17,6 @@ Xcursor*theme:  Vanilla-DMZ-AA
 
 *font:     xft:monospace:style=Normal:pixelsize=13
 *boldFont:     xft:monospace:style=Normal:pixelsize=13
-!*font:      -*-dina-medium-r-*-*-15-*-*-*-*-*-*-*
 
 xterm*font:             -misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
 xterm*faceName:         Courier New
@@ -45,7 +44,6 @@ keepassx*foreground:    #222222
 
 ! xcalc
 xcalc*geometry: 220x275
-xcalc*font:  xft:Dejavu Sans Mono:style=Normal:pixelsize=13
 xcalc.ti.bevel.background:              #222222
 xcalc.ti.bevel.screen.background:       Black
 xcalc.ti.bevel.screen.DEG.background:   Black
