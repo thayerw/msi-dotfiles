@@ -6,11 +6,11 @@ termcapinfo xterm 'ti@:te@'   # supposed to fix mouse scrolling issues (e.g. vim
 #termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
 # load some apps (last listed will be focused)
-screen 9  rtorrent
-screen 8  mocp 
-screen 1  mutt
-screen -t bash 3
-screen -t bash 2
+screen 5  rtorrent
+screen 4  mocp 
+screen 3  mutt
+screen 2
+screen 1
 
 # general
 altscreen on        # restore window contents after a vi session
