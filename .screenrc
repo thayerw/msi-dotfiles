@@ -2,7 +2,8 @@
 # ~/.screenrc
 # Thayer Williams -- http://cinderwick.ca/
 
-termcapinfo xterm ti@:te@   # supposed to fix mouse scrolling issues (e.g. vim)
+termcapinfo xterm 'ti@:te@'   # supposed to fix mouse scrolling issues (e.g. vim)
+#termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
 # load some apps (last listed will be focused)
 screen 9  rtorrent
@@ -14,7 +15,7 @@ screen -t bash 2
 # general
 altscreen on        # restore window contents after a vi session
 autodetach on       # autodetach on disconnect/close
-nethack on          # nethackish status messages
+nethack off         # nethackish status messages
 defscrollback 5000  # default scrollback buffer
 defutf8 on          # UTF-8 char encoding
 defflow off         # disable flow control
