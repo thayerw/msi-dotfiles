@@ -26,7 +26,7 @@ source ~/.mutt_private
 #set ssl_force_tls           # force encrypted connections or fail
 #set hidden_host             # cloak system name (gmail ignores)
 #unset beep                  # beep on error?
-#set beep_new                # beep on new message?
+set beep_new                 # beep on new message?
 #set quit = ask-yes          # confirm quit?
 #set delete = yes            # delete messages without confirmation?
 #unset confirmappend         # confirm message copy/move?
