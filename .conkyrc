@@ -9,17 +9,12 @@ update_interval 3
 total_run_times 0
 use_spacer none
 
-# ${mpd_smart 20} 
-# [ ${loadavg 1} ]
-# ${acpitemp}°  
-# mail ${new_mails $HOME/mail/inbox}
-
 TEXT
 ${acpitemp}°  \
 ${loadavg 1}  \
-${cpu cpu1}%   ${freq_g 1}GHz      \
-${mem}      \
-${if_existing /sys/class/power_supply/BAT1/present}Bat ${battery_percent BAT1}% ${battery_time BAT1}${else}AC${endif}      \
+${cpu cpu1}%  ${freq_g 1}GHz • \
+${mem} • \
+${if_existing /sys/class/power_supply/BAT1/present}Bat ${battery_percent BAT1}% ${battery_time BAT1}${else}AC${endif} • \
 ${if_empty ${exec ifconfig wlan0 | grep 'inet addr:'}}eth0  ${upspeedf eth0}k  ${downspeedf eth0}k${else}\
-${wireless_link_qual_perc wlan0}%  ${wireless_essid wlan0}  ${upspeedf wlan0}k  ${downspeedf wlan0}k${endif}      \
+${wireless_link_qual_perc wlan0}%  ${wireless_essid wlan0}  ${upspeedf wlan0}k  ${downspeedf wlan0}k${endif} • \
 ${time %b %d %H:%M}
