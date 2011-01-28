@@ -1,4 +1,3 @@
-
 " ~/.vimrc
 " Thayer Williams - http://cinderwick.ca
 
@@ -31,11 +30,9 @@ syntax on           " enable syntax highlighting
 filetype plugin indent on   " enable filetype-sensitive plugins and indenting
 
 " tabs and indenting
-set expandtab       " don't insert spaces instead of tabs
-set tabstop=4       " tabs count for n number of columns
-set softtabstop=4   " n cols in insert mode for tabs, backspaces, etc.
-set shiftwidth=4    " n cols for << and >> indentations
-set smarttab        " set <Tab>s according to shiftwidth
+set noexpandtab     " don't insert spaces instead of tabs
+set tabstop=4       " tabs appear as n number of columns
+set shiftwidth=4    " n cols for auto-indenting
 set autoindent      " auto indents next new line
 
 " searching
