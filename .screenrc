@@ -1,9 +1,31 @@
-
 # ~/.screenrc
 # Thayer Williams -- http://cinderwick.ca/
 
-termcapinfo xterm 'ti@:te@'   # supposed to fix mouse scrolling issues (e.g. vim)
-#termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+# fix mouse scrolling issues (e.g. vim)
+termcapinfo xterm 'ti@:te@'
+
+# general
+altscreen on        # restore window contents after a vi session
+defscrollback 5000  # default scrollback buffer
+defutf8 on          # UTF-8 char encoding
+defflow off         # disable flow control
+defbce on           # use current bg color for erased chars
+defshell -bash      # dash makes it a login shell
+startup_message off # disable startup msg
+vbell off           # toggle visual bell
+bell_msg "Bell in window %n "
+
+# misc keybinds
+bindkey -k k; quit      # F10 to quit screen
+bindkey ^[[1;5D prev    # xterm: change window with ctrl-left
+bindkey ^[[1;5C next    # xterm: change window with ctrl-right
+
+# window numbering starts at 1
+bind c screen 1
+bind 0 select 10
+
+# statusbar
+hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
 
 # load some apps (last listed will be focused)
 screen 5  rtorrent
@@ -11,37 +33,3 @@ screen 4  mocp
 screen 3  mutt
 screen 2
 screen 1
-
-# general
-altscreen on        # restore window contents after a vi session
-autodetach on       # autodetach on disconnect/close
-nethack off         # nethackish status messages
-defscrollback 5000  # default scrollback buffer
-defutf8 on          # UTF-8 char encoding
-defflow off         # disable flow control
-defbce on           # use current bg color for erased chars
-msgwait 3           # secs msgs are displayed
-defshell -bash      # dash makes it a login shell
-startup_message off # disable startup msg
-vbell off           # toggle visual bell
-vbell_msg ""
-bell_msg ""
-activity ""
-
-# statusbar
-hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
-
-# misc keybinds
-bindkey -k k; quit      # F10 to quit screen
-bindkey ^[[1;5D prev    # xterm: change window with ctrl-left
-bindkey ^[[1;5C next    # xterm: change window with ctrl-right
-#bindkey "^[Od" prev    # urxvt: change window with ctrl-left
-#bindkey "^[Oc" next    # urxvt: change window with ctrl-right
-
-# find the next shell
-bind s select bash 
-
-# window numbering starts at 1
-bind c screen 1
-bind 0 select 10
-
