@@ -15,16 +15,17 @@ Xft.lcdfilter:  lcddefault
 
 Xcursor*theme:  Vanilla-DMZ-AA
 
-*font:     xft:monospace:style=Normal:pixelsize=13
-*boldFont:     xft:monospace:style=Normal:pixelsize=13
+*font:      xft:monospace:style=Normal:pixelsize=13
+*boldFont:  xft:monospace:style=Normal:pixelsize=13
 
-xterm*font:             -misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xterm*font:             -*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1
+xterm*boldFont:         -*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1
+xterm*boldMode:         false
 xterm*faceName:         Courier New
 xterm*faceSize:         10
-xterm*renderFont:       true
+xterm*renderFont:       false
+xterm*bellIsUrgent:     true
 xterm*dynamicColors:    true
-xterm*utf8:             2
-xterm*eightBitInput:    true
 xterm*saveLines:        32767
 xterm*scrollBar:        false
 xterm*rightScrollBar:   true
@@ -41,4 +42,3 @@ xterm*trimSelection: true
 ! keepassx colourscheme
 keepassx*background:    #cfcfcf
 keepassx*foreground:    #222222
-
