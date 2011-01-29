@@ -6,10 +6,11 @@ source ~/.mutt/aliases
 source ~/.mutt/macros
 source ~/.mutt/colors.lightr
 
-# identity -------------------------------------------------------------
+# identity
+# --------
 
-set realname    = "Thayer Williams"         # real name for From:
-set from        = username@gmail.com      # default as shown in other people's inboxes
+set realname    = "Thayer Williams"         # real name for From field
+set from        = username@gmail.com        # default as shown in other people's inboxes
 set imap_user   = username@gmail.com        # imap username
 set imap_pass   = password                  # imap password
 set smtp_pass   = password
@@ -19,14 +20,16 @@ set alias_file  = ~/.mutt/aliases           # mutt's alias file--using this for 
 # source private account details to override the above
 source ~/.mutt_private
 
-# global options -------------------------------------------------------
+# global options
+# --------------
 
 set ssl_force_tls           # force encrypted connections or fail
-set beep_new                 # beep on new message?
+set beep_new                # beep on new message?
 set quit = ask-yes          # confirm quit?
 set delete = yes            # delete messages without confirmation?
 
-# reading mail ---------------------------------------------------------
+# reading mail
+# ------------
 
 set sort = threads          # primary sort order (threads, date, from, size, to, etc)
 set sort_aux = last-date-received   # sort secondary by the last date received
@@ -51,7 +54,8 @@ set pager_format = "[%C/%m] %b  %> %lL (%P)"      # pager statusbar
 set folder_format = "%2C %t %N %8s %d %f"         # mailbox list view
 set status_format = "%r %?M?%M/?%m total, %?n?%n new, ?%?u?%u unread, ?%?p?%p drafts, ?%?t?%t +tagged, ?%?d?%d deleted, ?(%f %l)  %?b?%b unread messages. ?%>  %V   sort by: %s/%S  (%P) %r"
 
-# composing mail -------------------------------------------------------
+# composing mail
+# --------------
 
 set editor="vim +':set tw=77' +':set spell' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
 
@@ -67,8 +71,8 @@ set date_format = "%b %d, %Y at %I:%M %p"     # date format for RE/FW headers
 set attribution = "On %D, %f wrote:"          # RE/FW headers
 #set attribution="-----Original Message----- \nFrom: %f  \nDate: %D  \nSubject: %s \n%t \n"
 
-
-# attachment/mime settings ---------------------------------------------
+# attachment/mime settings
+# ------------------------
 
 set mailcap_path = ~/.mailcap   # where mutt mailcap lives
 set implicit_autoview           # show everything it knows how to show without being prompted
@@ -77,8 +81,8 @@ auto_view text/html application/x-pgp-message # show these inline automatically
 # order in which to display types of message content
 alternative_order text/plain text/html text # multipart/alt precedence
 
-
-# address book ---------------------------------------------------------
+# address book
+# ------------
 
 set query_command = "~/.goobook/goobook.py query '%s'"  # use google contacts for addressbook
 # press a to add sender to abook
@@ -89,7 +93,7 @@ bind editor <Tab> complete-query
 macro generic A "<shell-escape>~/.goobook/goobook.py query " "query goobook"
 
 
-# mail profilesa -- uncomment to set/override global settings ----------
+# mail profiles
+# -------------
 
 source ~/.mutt/muttrc.imap 
-
