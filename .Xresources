@@ -15,9 +15,8 @@ Xft.lcdfilter:  lcddefault
 
 Xcursor*theme:  Vanilla-DMZ-AA
 
-*font:      xft:monospace:style=Normal:pixelsize=13
-*boldFont:  xft:monospace:style=Normal:pixelsize=13
-
+!xterm*font:             -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
+!xterm*boldFont:         -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
 xterm*font:             -*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1
 xterm*boldFont:         -*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1
 xterm*boldMode:         false
