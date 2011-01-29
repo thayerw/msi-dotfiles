@@ -107,7 +107,7 @@ export MANPAGER=less
 if [ -z "$DISPLAY" ]; then
 	export BROWSER="links '%s' &"
 else
-	export BROWSER=firefox-beta-bin
+	export BROWSER=vimprobable2
 fi
 
 # man pager colors
