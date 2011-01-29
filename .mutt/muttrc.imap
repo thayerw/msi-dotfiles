@@ -1,5 +1,6 @@
 
 # imap profile
+# ------------
 
 set folder      = imaps://imap.gmail.com:993    # default location of mailboxes
 set spoolfile   = +INBOX                    # open the +INBOX automatically (!)
@@ -12,13 +13,14 @@ unset copy      # gmail saves a copy automatically so disable other copies
 unset message_cache_clean   # set occasionally to clean/sync cached headers/bodies
 set imap_keepalive = 300    # seconds before server is pinged to prevent timeout
 set timeout     = 30        # seconds mutt waits for input before allowing other pending ops
-#set imap_check_subscribed = yes # fetch server-subscribed folders and add all as mailboxes
+set imap_check_subscribed = yes # fetch server-subscribed folders and add all as mailboxes
 
 # fetch our current mailbox list from here
 mailboxes = ! +ml-arch-dev +ml-suckless ~/.mail/oldmail
 
-# macros
-# ------
+# gmail macros
+# ------------
+
 macro index,pager d     "<save-message>+[Gmail]/Bin<enter>"        "move to trash"
 macro index,pager S     "<save-message>+[Gmail]/Spam<enter>"       "mark as spam"
 macro index,pager \cs   "<save-message>!<enter>"                   "mark as ham"
@@ -31,4 +33,3 @@ macro index,pager gd    "<change-folder>+[Gmail]/Drafts<enter>"    "go to drafts
 macro index,pager go    "<change-folder><<enter>"                  "go to sent mail"
 macro index,pager gb    "<change-folder>+[Gmail]/Bin<enter>"       "go to trash"
 macro index,pager gl    "<change-folder>-<enter>"                  "go to last folder" 
-

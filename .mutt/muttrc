@@ -2,20 +2,18 @@
 # ~/.mutt/muttrc
 # Thayer Williams - http://cinderwick.ca
 
-source ~/.mutt/aliases
 source ~/.mutt/macros
 source ~/.mutt/colors.lightr
 
 # identity
 # --------
 
-set realname    = "Thayer Williams"         # real name for From field
+set realname    = "John Doe"         	    # real name for From field
 set from        = username@gmail.com        # default as shown in other people's inboxes
 set imap_user   = username@gmail.com        # imap username
 set imap_pass   = password                  # imap password
 set smtp_pass   = password
 set smtp_url    = "smtps://username@gmail.com@smtp.gmail.com/"
-set alias_file  = ~/.mutt/aliases           # mutt's alias file--using this for FROM profiles
 
 # source private account details to override the above
 source ~/.mutt_private

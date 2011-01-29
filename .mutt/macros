@@ -1,6 +1,6 @@
-###----------------------------------------------------------------------------
-### custom key bindings + macros
-###----------------------------------------------------------------------------
+
+# custom key bindings + macros
+# ----------------------------
 
 bind  index,pager R     group-reply
 bind  index <left>      previous-entry

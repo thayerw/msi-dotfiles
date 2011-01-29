@@ -1,8 +1,7 @@
-#
+
 # title:    lightr - a mutt color scheme for light terminals
 # author:   thayer williams
 # website:  http://cinderwick.ca/
-#
 
 color   normal      default         default     # default colours
 color   index       red             default ~N  # new messages
