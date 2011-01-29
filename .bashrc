@@ -33,14 +33,14 @@ GITSTATUS="\$(__git_ps1 \" (%s)\")"
 #PS1='\n\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\W\[\033[0;33m\]\n$\[\033[0m\] '
 # dynamic bash prompt
 if [ -z "$SSH_TTY" ]; then
-    if [ ${UID} -eq 0 ] ; then
-        PS1="\n${RED}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTRED}#${NIL} "
-    else
-       #PS1="\n${BLUE}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTBLUE}\$${NIL} "
-        PS1='\n\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\w\[\033[0;33m\]\n$\[\033[0m\] '
-    fi
+	if [ ${UID} -eq 0 ] ; then
+		PS1="\n${RED}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTRED}#${NIL} "
+	else
+		#PS1="\n${BLUE}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTBLUE}\$${NIL} "
+		PS1='\n\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\w\[\033[0;33m\]\n$\[\033[0m\] '
+	fi
 else
-    PS1="\n${GREEN}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTGREEN}\$${NIL} "
+	PS1="\n${GREEN}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTGREEN}\$${NIL} "
 fi
 
 
@@ -66,15 +66,15 @@ shopt -s no_empty_cmd_completion # don't search completions in PATH on an empty 
 
 # linux console colors
 if [ "$TERM" = "linux" ]; then
-    #legend:  blk    red    grn    yel    blu    mag    cya    wht
-    vimbrant=(222222 f92672 82b414 fd971f 56c2d6 8c54fe 465457 ccccc6
+	#legend:  blk    red    grn    yel    blu    mag    cya    wht
+	vimbrant=(222222 f92672 82b414 fd971f 56c2d6 8c54fe 465457 ccccc6
               505354 ff5995 b6e354 feed6c 8cedff 9e6ffe 899ca1 f8f8f2)
-      lightr=(eeeeee ff0000 008700 af5f00 000087 870087 0087af 555555
-              222222 ff005f 00af00 ff8700 0000ff af00d7 00afd7 ffffff)
-    for n in $(seq 0 15); do
-        printf '\e]P%x%s' $n ${vimbrant[$n]}
-    done
-    clear; unset vimbrant; unset lightr
+	lightr=(eeeeee ff0000 008700 af5f00 000087 870087 0087af 555555
+            222222 ff005f 00af00 ff8700 0000ff af00d7 00afd7 ffffff)
+	for n in $(seq 0 15); do
+		printf '\e]P%x%s' $n ${vimbrant[$n]}
+	done
+	clear; unset vimbrant; unset lightr
 fi
 
 
@@ -105,12 +105,10 @@ export PAGER=less
 export MANPAGER=less
 
 if [ -z "$DISPLAY" ]; then
-    export BROWSER="links '%s' &"
+	export BROWSER="links '%s' &"
 else
-    #export BROWSER=firefox
-    export BROWSER=firefox-beta-bin
+	export BROWSER=firefox-beta-bin
 fi
-
 
 # man pager colors
 export GROFF_NO_SGR=1 # output ANSI color escape sequences in raw form
@@ -169,54 +167,54 @@ alias t="todo.sh -d $HOME/.todo"
 # ---------
 
 pacsearch() {
-  echo -e "$(pacman -Ss $@ | sed \
-  -e 's#core/.*#\\033[1;31m&\\033[1;30m#g' \
-  -e 's#extra/.*#\\033[1;34m&\\033[1;30m#g' \
-  -e 's#community/.*#\\033[0;32m&\\033[1;30m#g' \
-  -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[1;30m#g' )"
+	echo -e "$(pacman -Ss $@ | sed \
+	-e 's#core/.*#\\033[1;31m&\\033[1;30m#g' \
+	-e 's#extra/.*#\\033[1;34m&\\033[1;30m#g' \
+	-e 's#community/.*#\\033[0;32m&\\033[1;30m#g' \
+	-e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[1;30m#g' )"
 }
 
 # extract - archive extractor
 # usage: extract <file>
 extract() {
-  if [ -f "$1" ] ; then
-    case "$1" in
-      *.tar.bz2) tar xvjf "$1" ;;
-      *.tar.gz) tar xvzf "$1" ;;
-      *.bz2) bunzip2 "$1" ;;
-      *.rar) unrar x "$1" ;;
-      *.gz) gunzip "$1" ;;
-      *.tar) tar xvf "$1" ;;
-      *.tbz2) tar xvjf "$1" ;;
-      *.tgz) tar xvzf "$1" ;;
-      *.zip) unzip "$1" ;;
-      *.Z) uncompress "$1" ;;
-      *.7z) 7z x "$1" ;;
-      *)
-      echo "$1 is not a valid archive"
-      return 1
-      ;;
-    esac
-  else
-    echo "$1 is not a valid file"
-    return 1
-  fi
-  return 0
+	if [ -f "$1" ] ; then
+		case "$1" in
+			*.tar.bz2) tar xvjf "$1" ;;
+			*.tar.gz) tar xvzf "$1" ;;
+			*.bz2) bunzip2 "$1" ;;
+			*.rar) unrar x "$1" ;;
+			*.gz) gunzip "$1" ;;
+			*.tar) tar xvf "$1" ;;
+			*.tbz2) tar xvjf "$1" ;;
+			*.tgz) tar xvzf "$1" ;;
+			*.zip) unzip "$1" ;;
+			*.Z) uncompress "$1" ;;
+			*.7z) 7z x "$1" ;;
+			*)
+		echo "$1 is not a valid archive"
+		return 1
+		;;
+		esac
+	else
+		echo "$1 is not a valid file"
+		return 1
+	fi
+	return 0
 }
 
 # define - fetch word defnition from google
 # usage: define <word>
 define() {
-  lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 5 -w "*" | sed 's/;/ -/g' | cut -d- -f5 > /tmp/templookup.txt
-  if [[ -s /tmp/templookup.txt ]] ;then
-    until ! read response
-      do
-      echo "${response}"
-      done < /tmp/templookup.txt
-    else
-      echo "Sorry $USER, I can't find the term \"${1} \""
-  fi
-  rm -f /tmp/templookup.txt
+	lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 5 -w "*" | sed 's/;/ -/g' | cut -d- -f5 > /tmp/templookup.txt
+	if [[ -s /tmp/templookup.txt ]] ;then
+		until ! read response
+		do
+		echo "${response}"
+		done < /tmp/templookup.txt
+	else
+		echo "Sorry $USER, I can't find the term \"${1} \""
+	fi
+	rm -f /tmp/templookup.txt
 }
 
 # load local settings (private stuff, etc.)
