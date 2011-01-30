@@ -1,8 +1,8 @@
-# file:     ~/.gmrunrc
-# author:   Thayer Williams - http://cinderwick.ca
+# ~/.gmrunrc
+# Thayer Williams - http://cinderwick.ca
 
 # terminal info 
-Terminal     =  urxvtcd
+Terminal     =  xterm
 
 TermExec     =  ${Terminal} -e
 AlwaysInTerm =  ssh telnet ftp lynx mc vi vim man htop alsamixer mutt vifm mocp ncmpc
@@ -26,9 +26,9 @@ TabTimeout   =  0    # ms before gmrun simulates a TAB press (0 disables)
 #   - %u gets replaced with the whole URL ("http://www.google.com")
 #   - %s gets replaced with "//www.google.com".  This is useful for URL-s
 #     like "man:printf" --> %s will get replaced with "printf"
-URL_http    = firefox "%u"
-URL_ftp     = firefox "%u"
-URL_mailto  = firefox "%u"
+URL_http    = vimprobable2 "%u"
+URL_ftp     = vimprobable2 "%u"
+URL_mailto  = vimprobable2 "%u"
 URL_man     = ${TermExec} 'man %s'
 URL_info    = ${TermExec} 'info %s'
 URL_file    = nautilus %s
@@ -44,4 +44,3 @@ EXT:tar,gz,zip,xz,jar,rar,iso = file-roller %s
 EXT:txt,patch,diff,conf,rc,sh,pl,c,cc,cpp,h,java,html,htm,php,epl,tex,latex,js,css,xml,xsl,am,README,INSTALL,AUTHOR,xinitrc,bashrc,bash_profile,bash_logout,gmrunrc,Xresources,vimrc,muttrc, = gvim %s
 EXT:mp4,flv,avi,mpeg,mpg,wmv,asf = mplayer %s
 EXT:gif,jpg,jpeg,png,svg,bmp,tif,tga,ico = geeqie %s
-
