@@ -103,6 +103,8 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 export MANPAGER=less
+export http_proxy=http://localhost:8118/
+export HTTP_PROXY=${http_proxy}
 
 if [ -z "$DISPLAY" ]; then
 	export BROWSER="links '%s' &"
