@@ -15,7 +15,7 @@ xset r rate 250 60                          # keyboard repeat delay and rate
 xsetroot -cursor_name left_ptr -bg '#666' -fg '#222' -mod 2 2     # set root cursor and background
 nitrogen --restore                          # restore wallpaper
 unclutter -noevents &                       # hide mouse cursor on idle
-trayer --edge top --align left --distance 32 --margin 10 --widthtype request --width 16 --expand true --transparent true --alpha 255 --tint 0x333333 &
+stalonetray &                               # system tray utility 
 keepassx &                                  # password manager
 glipper-old &                               # clipboard...do i really need this?
 xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 000+ -cornerdelay 3 & 
@@ -23,4 +23,4 @@ xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 000+ -co
 xterm -e bash -c 'screen -dRR -S $HOSTNAME' &
 dropboxd &
 exec ck-launch-session startdwm
-#exec wmfs
+#exec windowmaker
