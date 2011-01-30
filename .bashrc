@@ -6,6 +6,7 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
+
 # prompt colours
 RED='\[\033[0;31m\]'
 LIGHTRED='\[\033[1;31m\]'
@@ -25,23 +26,9 @@ BLACK='\[\033[1;30m\]'
 DARKGREY='\[\033[0;30m\]'
 NIL='\[\033[00m\]'
 
-[ -e $HOME/.git-completion.sh ] && source $HOME/.git-completion.sh
-GITSTATUS="\$(__git_ps1 \" (%s)\")"
-
 # bash prompt
 #PS1='[\u@\h \W]\$ '
-#PS1='\n\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\W\[\033[0;33m\]\n$\[\033[0m\] '
-# dynamic bash prompt
-if [ -z "$SSH_TTY" ]; then
-	if [ ${UID} -eq 0 ] ; then
-		PS1="\n${RED}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTRED}#${NIL} "
-	else
-		#PS1="\n${BLUE}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTBLUE}\$${NIL} "
-		PS1='\n\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\w\[\033[0;33m\]\n$\[\033[0m\] '
-	fi
-else
-	PS1="\n${GREEN}\u@\h ${PURPLE}\w${LIGHTGREEN}${GITSTATUS}\n${LIGHTGREEN}\$${NIL} "
-fi
+PS1="\n${GREEN}\A ${RED}\u${DARKGREY}@${PURPLE}\h${DARKGREY}:${LIGHTBLUE}\w\n${YELLOW}\$${NIL} "
 
 
 # sudo bash completion and advanced completion
@@ -82,35 +69,15 @@ fi
 # -------
 
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
-[ -d $HOME/cxoffice/bin ] && export PATH=$PATH:$HOME/cxoffice/bin
-[ -d /opt/local/ ] && export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export IGNOREEOF=3 # don't log out on Ctrl-D
-export LANG=en_CA.UTF-8
 export LC_ALL=en_CA.utf8
-export LC_COLLATE=en_CA.utf8 # sort [a-Z] instead of [A-Z]
 export HISTCONTROL=eraseboth # ingore duplicates and spaces (erasedups|ignoreboth|ignoredups|ignorespace)
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:ll:la:clear:exit' # don't append consecutive duplicates of these
 export HISTSIZE=10000 # bash history will save N commands
 export HISTFILESIZE=${HISTSIZE} # bash will remember N commands
 export HISTTIMEFORMAT="[%Y-%m-%d - %H:%M:%S] "
 export GREP_OPTIONS='--color=auto' # beautify grep
-export OOO_FORCE_DESKTOP=gnome          # force OOo UI style to use GNOME theme
-export MOZ_DISABLE_PANGO=1              # pango slows firefox
-export FIREFOX_DSP=none                 # pango slows firefox
-export MAIL=$HOME/mail                  # dummy path for local mail
-export MAILCHECK=-1                     # don't bug me about new mail
 export EDITOR=vim
-export VISUAL=vim
-export PAGER=less
-export MANPAGER=less
 export http_proxy=http://localhost:8118/
-export HTTP_PROXY=${http_proxy}
-
-if [ -z "$DISPLAY" ]; then
-	export BROWSER="links '%s' &"
-else
-	export BROWSER=vimprobable2
-fi
 
 # man pager colors
 export GROFF_NO_SGR=1 # output ANSI color escape sequences in raw form
@@ -136,9 +103,9 @@ alias ...="cd ../.."
 # archlinux aliases
 alias pac="pacsearch"                       # colorize pacman (pacs)
 alias pacs="pacman -Sl | cut -d' ' -f2 | grep " # search pkgname by keyword
-alias pacq="pacman -Qi"
+alias pacq="pacman -Qi"                     # pkg info
 alias pacup="sudo pacman -Syu"              # sync and update
-alias pacls="pacman -Ql"
+alias pacls="pacman -Ql"                    # pkg filelist
 alias pacin="sudo pacman -S"                # install pkg
 alias pacout="sudo pacman -Rns"             # remove pkg and the deps it installed
 alias vp="vim PKGBUILD"
@@ -159,10 +126,7 @@ alias ntup="sudo /usr/bin/ntpdate time-a.nist.gov"  # update time
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""' # get xprop CLASS and NAME
 alias getip='lynx -dump http://tnx.nl/ip'
 alias psm="echo '%CPU %MEM   PID COMMAND' && ps hgaxo %cpu,%mem,pid,comm | sort -nrk1 | head -n 10 | sed -e 's/-bin//' | sed -e 's/-media-play//'"
-alias timer='time read -p "Press enter to stop"'
 alias blankcd="wodim -v dev=/dev/cdrw -blank=fast -eject"
-alias stripx="find . -type f -print0 | xargs -0 chmod a-x"
-alias t="todo.sh -d $HOME/.todo"
 
 
 # functions
@@ -204,21 +168,6 @@ extract() {
 	return 0
 }
 
-# define - fetch word defnition from google
-# usage: define <word>
-define() {
-	lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 5 -w "*" | sed 's/;/ -/g' | cut -d- -f5 > /tmp/templookup.txt
-	if [[ -s /tmp/templookup.txt ]] ;then
-		until ! read response
-		do
-		echo "${response}"
-		done < /tmp/templookup.txt
-	else
-		echo "Sorry $USER, I can't find the term \"${1} \""
-	fi
-	rm -f /tmp/templookup.txt
-}
 
 # load local settings (private stuff, etc.)
 [ -e $HOME/.bash-local ] && source $HOME/.bash-local
-
