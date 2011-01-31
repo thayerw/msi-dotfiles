@@ -46,9 +46,8 @@ stty -ixoff
 
 
 # bash options
-shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s cmdhist    # save multi-line commands in history as single line
 shopt -s histappend # append to the history file
-shopt -s no_empty_cmd_completion # don't search completions in PATH on an empty line
 
 
 # linux console colors
