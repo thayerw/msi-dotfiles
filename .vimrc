@@ -4,20 +4,21 @@
 " general
 " -------
 
-set t_Co=256
-set spelllang=en_ca " Canadian English
-set nobackup        " disable backup files (filename~)
+set t_Co=256            " force 256-color mode
+set spelllang=en_ca     " Canadian English
+set nobackup            " disable backup files (filename~)
+set splitbelow          " place new files below the current
 set clipboard+=unnamed  " yank and copy to X clipboard
-set encoding=utf-8  " UTF-8 encoding for all new files
-set mouse=a         " allow mouse input in all modes
-set ttymouse=xterm  " enable scrolling in screen (xterm2) or tmux (xterm) sessions
-set backspace=2     " full backspacing capabilities (indent,eol,start)
-set number          " show line numbers
+set encoding=utf-8      " UTF-8 encoding for all new files
+set mouse=a             " allow mouse input in all modes
+set ttymouse=xterm      " enable scrolling in screen (xterm2) or tmux (xterm) sessions
+set backspace=2         " full backspacing capabilities (indent,eol,start)
+set number              " show line numbers
 set ww=b,s,h,l,<,>,[,]  " whichwrap -- left/right keys can traverse up/down
-set linebreak       " attempt to wrap lines cleanly
-set wildmenu        " enhanced tab-completion shows all matching cmds in a popup menu
+set linebreak           " attempt to wrap lines cleanly
+set wildmenu            " enhanced tab-completion shows all matching cmds in a popup menu
 set wildmode=list:longest,full
-syntax on           " enable syntax highlighting
+syntax on               " enable syntax highlighting
 filetype plugin indent on   " enable filetype-sensitive plugins and indenting
 
 " tabs and indenting
