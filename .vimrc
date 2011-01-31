@@ -69,8 +69,8 @@ map M :%s/$//g
 " -------------
 
 if has("autocmd")
-    " always jump to the last cursor position
-    autocmd BufReadPost * if line("'\"")>0 && line("'\"")<=line("$")|exe "normal g`\""|endif
-    autocmd BufRead *.txt set tw=72 " limit width to n cols for txt files
-    autocmd BufRead /tmp/mutt-* set tw=72 ft=mail nocindent spell   " width, mail syntax hilight, spellcheck
+	" always jump to the last cursor position
+	autocmd BufReadPost * if line("'\"")>0 && line("'\"")<=line("$")|exe "normal g`\""|endif
+	autocmd BufRead *.txt set tw=72 " limit width to n cols for txt files
+	autocmd BufRead /tmp/mutt-* set tw=72 ft=mail nocindent spell   " width, mail syntax hilight, spellcheck
 endif
