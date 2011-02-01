@@ -19,8 +19,6 @@ stalonetray &                               # system tray utility
 keepassx &                                  # password manager
 glipper-old &                               # clipboard...do i really need this?
 xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 000+ -cornerdelay 3 & 
-#urxvtcd -e bash -c "tmux attach -t msi" &
 xterm -e bash -c 'screen -dRR -S $HOSTNAME' &
 dropboxd &
 exec ck-launch-session ~/.dwm/startdwm
-#exec windowmaker
