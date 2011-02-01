@@ -13,7 +13,7 @@ xmodmap ~/.xmodmaprc                        # set caps lock to ctrl
 xset +fp ~/.fonts                           # add local font path for x apps like dwm 
 xset r rate 250 60                          # keyboard repeat delay and rate
 xsetroot -cursor_name left_ptr -bg '#666' -fg '#222' -mod 2 2     # set root cursor and background
-nitrogen --restore                          # restore wallpaper
+sh ~/.fehbg                                 # restore wallpaper
 unclutter -noevents &                       # hide mouse cursor on idle
 stalonetray &                               # system tray utility 
 keepassx &                                  # password manager
