@@ -7,9 +7,7 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
 fi
 
 xrdb -merge .Xresources
-xmodmap -e "keycode 113 = Super_L"          # reassign Alt_R to Super_L
-xmodmap -e "remove mod1 = Super_L"          # make sure X keeps it out of the mod1 group
-xmodmap ~/.xmodmaprc                        # set caps lock to ctrl
+xmodmap ~/.xmodmaprc                        # swap some keys around
 xset +fp ~/.fonts                           # add local font path for x apps like dwm 
 xset r rate 250 60                          # keyboard repeat delay and rate
 xsetroot -cursor_name left_ptr -bg '#666' -fg '#222' -mod 2 2     # set root cursor and background
