@@ -12,10 +12,10 @@ xset +fp ~/.fonts                           # add local font path for x apps lik
 xset r rate 250 60                          # keyboard repeat delay and rate
 xsetroot -solid darkgrey                    # set root window background
 sh ~/.fehbg                                 # restore wallpaper, if any
+autocutsel -fork                            # sync cutbuffer and XCLIPBOARD
 unclutter &                                 # hide mouse cursor after 5s of idle
 stalonetray -geometry 3x1+35-530 &          # system tray utility
 keepassx &                                  # password manager
-glipper-old &                               # clipboard...do i really need this?
 dropboxd &                                  # dropbox sync client
 xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 000+ -cornerdelay 3 & 
 xterm -e bash -c 'screen -dRR -S $HOSTNAME' &
