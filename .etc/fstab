@@ -1,0 +1,10 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>        <dir>         <type>    <options>          <dump> <pass>
+devpts                 /dev/pts      devpts    defaults            0      0
+shm                    /dev/shm      tmpfs     nodev,nosuid        0      0
+
+/dev/sda1   /media/windows  ntfs-3g  users,uid=1000,gid=100,fmask=0113,dmask=0002  0 0
+UUID=cd127216-ad5f-4900-9d57-9259c9c5d5d2 / ext4 defaults 0 1
+UUID=dc0fd143-4892-4cb6-94bc-b518a1d99534 swap swap defaults 0 0

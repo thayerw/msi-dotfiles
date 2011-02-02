@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# /etc/rc.local: Local multi-user startup script.
+#
+
+# lower 'parking' threshold for hard drive power management
+hdparm -B 254 /dev/sda
+
+# speedier console keyboard rate/delay
+kbdrate -r 30 -d 250

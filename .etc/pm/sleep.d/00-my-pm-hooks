@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case $1 in
+    hibernate)
+        #echo "Hibernating..."
+        ;;
+    suspend)
+        #echo "Suspending..."
+        ;;
+    thaw)
+        # reset power management settings for SATA drive
+        hdparm -B 254 /dev/sda > /dev/null
+        # speedier console keyboard rate/delay
+        kbdrate -r 30 -d 250
+        #echo "Waking from hiberation..."
+        ;;
+    resume)
+        # reset power management settings for SATA drive
+        hdparm -B 254 /dev/sda > /dev/null
+        #echo "Waking from standby..."
+        ;;
+    *)  echo "Undefined event..."
+        ;;
+esac

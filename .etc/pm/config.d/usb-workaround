@@ -1,0 +1,3 @@
+# reload the following modules to fix USB issues
+SUSPEND_MODULES="ehci_hcd uhci_hcd usbcore"
+
