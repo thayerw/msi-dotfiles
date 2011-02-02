@@ -83,13 +83,14 @@ alternative_order text/plain text/html text # multipart/alt precedence
 # address book
 # ------------
 
-set query_command = "~/.goobook/goobook.py query '%s'"  # use google contacts for addressbook
-# press a to add sender to abook
-macro index,pager a "<pipe-message>~/.goobook/goobook.py add" "add the sender to gmail contacts"
-# autocomplete queries using goobook
+# use google contacts for addressbook
+set query_command = "goobook query '%s'"
+# tab-complete queries using goobook
 bind editor <Tab> complete-query
 # address query anywhere
-macro generic A "<shell-escape>~/.goobook/goobook.py query " "query goobook"
+macro generic A "<shell-escape>goobook query " "query goobook"
+# press a to add sender to google contacts
+macro index,pager a "<pipe-message>goobook add" "add the sender to google contacts"
 
 
 # mail profiles
