@@ -7,6 +7,6 @@ text/html; lynx -dump -force_html  %s;  needsterminal; copiousoutput
 text/*; vim %s
 application/msword; antiword %s ; copiousoutput
 application/pdf; xpdf %s
-image; feh -ZF %s 
+image; feh -ZF --zoom 100 %s 
 video; mplayer %s
 audio; mplayer %s
