@@ -23,10 +23,13 @@ case "$1" in
         ;;
     button/sleep)
         case "$2" in
-            SLPB)   /usr/sbin/pm-suspend
+            SLPB)   
+                    # screenlock X and go into standby (S3)
+                    DISPLAY=:0 su -c - thayer /usr/bin/slock &
+                    /usr/sbin/pm-suspend
+
                     #echo -n mem >/sys/power/state 
                     #echo "Sleep button pressed!">/dev/tty5
-            
             ;;
             *)      logger "ACPI action undefined: $2" ;;
         esac
@@ -65,22 +68,16 @@ case "$1" in
         esac
         ;;
     button/lid)
-        # check if the lid is open or closed, using the /proc file
-        grep -q closed /proc/acpi/button/lid/*/state
-            if [ $? = 0 ]; then
-                # if the lid is now closed, save the network state and suspend to ram
-                DISPLAY=:0 su -c - thayer /usr/bin/slock &
-                /usr/bin/netcfg all-suspend
-                /usr/sbin/pm-suspend
-                #echo -n mem >/sys/power/state
-            else
-                # if the lid is now open, restore the network state.
-                # (if we are running, a wakeup has already occured!)
-                /usr/bin/netcfg all-resume
-                # reset stubborn SATA power management settings
-                #/sbin/hdparm -B 254 /dev/sda
-            fi
-        #echo "LID switched!">/dev/tty5
+                # check if the lid is open or closed, using the /proc file
+                grep -q closed /proc/acpi/button/lid/*/state
+                if [ $? = 0 ]; then
+                    # screenlock X and go into standby (S3)
+                    DISPLAY=:0 su -c - thayer /usr/bin/slock &
+                    /usr/sbin/pm-suspend
+                    #echo -n mem >/sys/power/state
+                fi
+
+                #echo "LID switched!">/dev/tty5
         ;;
     *)
         logger "ACPI group/action undefined: $1 / $2"
