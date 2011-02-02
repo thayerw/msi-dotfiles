@@ -25,6 +25,7 @@ set ssl_force_tls           # force encrypted connections or fail
 set beep_new                # beep on new message?
 set quit = ask-yes          # confirm quit?
 set delete = yes            # delete messages without confirmation?
+unset confirmappend         # don't confirm when moving msgs to exising mailbox
 
 # reading mail
 # ------------
