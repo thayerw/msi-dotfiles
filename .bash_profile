@@ -10,6 +10,5 @@
 
 # auto startx if logging in at VC/1
 if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
-	xinit >& ~/.myXLog
-	logout
+	exec xinit >& ~/.myXLog
 fi
