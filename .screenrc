@@ -1,44 +1,39 @@
 # ~/.screenrc
 # Thayer Williams -- http://cinderwick.ca/
 
-# settings for 256-color support
-# ------------------------------
-# allow bold colors - necessary for some reason
-attrcolor b ".I" 
-# tell screen how to set colors. AB = background, AF=foreground 
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
-# erase background with current bg color 
-defbce "on"
-
-# fix mouse scrolling issues (e.g. vim)
-termcapinfo xterm 'ti@:te@'
-
-# general
-altscreen on        # restore window contents after a vi session
-defscrollback 5000  # default scrollback buffer
-defutf8 on          # UTF-8 char encoding
-defflow off         # disable flow control
-defbce on           # use current bg color for erased chars
-defshell -bash      # dash makes it a login shell
-startup_message off # disable startup msg
-vbell off           # toggle visual bell
-bell_msg "Bell in window %n "
-
-# misc keybinds
-bindkey -k k; quit      # F10 to quit screen
-bindkey ^[[1;5D prev    # xterm: change window with ctrl-left
-bindkey ^[[1;5C next    # xterm: change window with ctrl-right
-
-# window numbering starts at 1
-bind c screen 1
-bind 0 select 10
-
-# statusbar
-hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
-
 # load some apps (last listed will be focused)
 screen 5  rtorrent
 screen 4  mocp 
 screen 3  mutt
 screen 2
 screen 1
+
+# general
+altscreen on        # restore window contents after a vi session
+defscrollback 5000  # default scrollback buffer
+defutf8 on          # UTF-8 char encoding
+defflow off         # disable flow control
+defshell -bash      # dash makes it a login shell
+startup_message off # disable startup msg
+vbell off           # toggle visual bell
+bell_msg "Bell in window %n ()"
+
+# keybinds
+bindkey ^[[1;5D prev    # xterm: change window with ctrl-left
+bindkey ^[[1;5C next    # xterm: change window with ctrl-right
+bind K quit             # C-a-K to quit screen
+bind c screen 1         # make window numbering start at 1
+bind 0 select 10        # zero selects window 10
+
+# statusbar
+hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
+
+# fix mouse scrolling issues (e.g. vim)
+termcapinfo xterm 'ti@:te@'
+
+# settings for 256-color support
+# ------------------------------
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# use current bg color for erased chars
+defbce on
