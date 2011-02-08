@@ -54,9 +54,9 @@ shopt -s histappend # append to the history file
 if [ "$TERM" = "linux" ]; then
 	#legend:  blk    red    grn    yel    blu    mag    cya    wht
 	vimbrant=(222222 f92672 82b414 fd971f 56c2d6 8c54fe 465457 ccccc6
-              505354 ff5995 b6e354 feed6c 8cedff 9e6ffe 899ca1 f8f8f2)
+	          505354 ff5995 b6e354 feed6c 8cedff 9e6ffe 899ca1 f8f8f2)
 	lightr=(eeeeee ff0000 008700 af5f00 000087 870087 0087af 555555
-            222222 ff005f 00af00 ff8700 0000ff af00d7 00afd7 ffffff)
+	        222222 ff005f 00af00 ff8700 0000ff af00d7 00afd7 ffffff)
 	for n in $(seq 0 15); do
 		printf '\e]P%x%s' $n ${vimbrant[$n]}
 	done
@@ -166,7 +166,6 @@ extract() {
 	fi
 	return 0
 }
-
 
 # load local settings (private stuff, etc.)
 [ -e $HOME/.bash-local ] && source $HOME/.bash-local
