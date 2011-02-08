@@ -9,7 +9,7 @@ set postponed   = "+[Gmail]/Drafts"         # store drafts here (R)
 set record      = "+[Gmail]/Sent Mail"      # store sent mail here (<)
 set header_cache = ~/.mutt/cache/headers    # cache headers here
 set message_cachedir = ~/.mutt/cache/bodies # cache message bodies here
-unset copy      # gmail saves a copy automatically so disable other copies
+unset copy                  # gmail saves a copy automatically so disable other copies
 unset message_cache_clean   # set occasionally to clean/sync cached headers/bodies
 set imap_keepalive = 300    # seconds before server is pinged to prevent timeout
 set timeout     = 30        # seconds mutt waits for input before allowing other pending ops
