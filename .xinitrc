@@ -18,5 +18,5 @@ stalonetray -geometry 2x1+35-530 &          # system tray utility
 keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
 xautolock -detectsleep & 
-xterm -e bash -c 'screen -dRR -S $HOSTNAME' &
+urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME' &
 exec ck-launch-session ~/.dwm/startdwm
