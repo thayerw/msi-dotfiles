@@ -16,10 +16,22 @@ Xcursor*theme:  Vanilla-DMZ-AA
 *font:             -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
 *boldFont:         -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
 
-xterm*boldMode:         false
-xterm*faceName:         Courier New
-xterm*faceSize:         10
-xterm*renderFont:       false
+urxvt*urgentOnBell:     true
+urxvt*internalBorder:   1
+urxvt*saveLines:        10000
+urxvt*visualBell:       true
+urxvt*jumpScroll:       false
+urxvt*scrollBar:        false
+urxvt*scrollTtyKeypress:true
+urxvt*scrollWithBuffer: false
+urxvt*scrollTtyOutput:  false
+urxvt*utmpInhibit:      true
+urxvt*print-pipe:       cat > $(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+urxvt*perl-ext-common:  default,matcher
+urxvt*keysym.C-Insert:  perl:matcher
+urxvt*matcher.button:   1
+urxvt*urlLauncher:      vimprobable2
+
 xterm*bellIsUrgent:     true
 xterm*saveLines:        10000
 xterm*scrollBar:        false
