@@ -13,10 +13,10 @@ unset copy                  # gmail saves a copy automatically so disable other 
 unset message_cache_clean   # set occasionally to clean/sync cached headers/bodies
 set imap_keepalive = 300    # seconds before server is pinged to prevent timeout
 set timeout     = 30        # seconds mutt waits for input before allowing other pending ops
-set imap_check_subscribed = yes # fetch server-subscribed folders and add all as mailboxes
+set imap_check_subscribed = no # fetch server-subscribed folders and add all as mailboxes
 
 # fetch our current mailbox list from here
-mailboxes = ! +ml-arch-dev +ml-suckless ~/.mail/oldmail
+mailboxes = ! +ml-arch-dev +ml-suckless +ml-suckless-misc +ufv
 
 # gmail macros
 # ------------
