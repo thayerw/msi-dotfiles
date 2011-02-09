@@ -9,6 +9,11 @@ really hard to beat!
 
 For a quick and dirty lynx session, run:
 
- $ lynx -vikeys -tna -nocolor -number_fields [url]
+	$ lynx -vikeys -tna -nocolor -number_fields [url]
+
+	-vikeys:         enable vi-like navgiation
+	-tna:            input fields must be activated; great for vikeys
+	-nocolor:        disable color
+	-number_fields:  enable link hinting for links and input fields
 
 For more information, see http://lynx.isc.org/
