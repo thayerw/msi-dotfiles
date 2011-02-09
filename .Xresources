@@ -10,7 +10,6 @@ Xft.autohint:   0
 Xft.hinting:    1
 Xft.hintstyle:  hintfull
 Xft.antialias:  1
-Xft.lcdfilter:  lcddefault
 
 Xcursor*theme:  Vanilla-DMZ-AA
 
