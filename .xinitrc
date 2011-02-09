@@ -17,6 +17,6 @@ unclutter &                                 # hide mouse cursor after 5s of idle
 stalonetray -geometry 2x1+35-530 &          # system tray utility
 keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
-xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 000+ -cornerdelay 3 & 
+xautolock -detectsleep & 
 xterm -e bash -c 'screen -dRR -S $HOSTNAME' &
 exec ck-launch-session ~/.dwm/startdwm
