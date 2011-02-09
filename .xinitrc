@@ -14,7 +14,7 @@ xsetroot -solid darkgrey                    # set root window background
 sh ~/.fehbg                                 # restore wallpaper, if any
 autocutsel -fork                            # sync cutbuffer and XCLIPBOARD
 unclutter &                                 # hide mouse cursor after 5s of idle
-stalonetray -geometry 3x1+35-530 &          # system tray utility
+stalonetray -geometry 2x1+35-530 &          # system tray utility
 keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
 xautolock -time 10 -locker slock -nowlocker slock -detectsleep -corners 000+ -cornerdelay 3 & 
