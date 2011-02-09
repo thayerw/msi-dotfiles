@@ -77,6 +77,7 @@ export HISTTIMEFORMAT="[%Y-%m-%d - %H:%M:%S] "
 export GREP_OPTIONS='--color=auto' # beautify grep
 export EDITOR=vim
 export http_proxy=http://localhost:8118/
+export LYNX_LSS=$HOME/.lynx/lynx.lss
 
 # man pager colors
 export GROFF_NO_SGR=1 # output ANSI color escape sequences in raw form
