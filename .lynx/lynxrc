@@ -36,7 +36,7 @@ anonftp_password=user@anonymous.org
 # bookmark_file specifies the name and location of the default bookmark
 # file into which the user can paste links for easy access at a later
 # date.
-bookmark_file=~/.lynx/bookmarks.html
+bookmark_file=./.lynx/lynx_bookmarks.html
 
 # If case_sensitive_searching is "on" then when the user invokes a search
 # using the 's' or '/' keys, the search performed will be case sensitive
