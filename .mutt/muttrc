@@ -39,7 +39,7 @@ set menu_scroll             # scroll in menus when traversing screen margins
 set tilde                   # pad empty lines with a ~ similar to vi
 
 set quote_regexp = "^([A-Za-z ]+>|[]>:|}-][]>:|}-]*)"     # regexp to determine quotes
-set pager_index_lines = 8   # split screen to show display message index (x-1 entries) at top
+set pager_index_lines = 6   # split screen to show display message index (x-1 entries) at top
 set pager_context = 5       # retain X lines of prev page when scrolling
 set pager_stop              # dont auto-go to next msg
 set status_on_top           # toggle status bar location
