@@ -12,6 +12,6 @@ unclutter &                                 # hide mouse cursor after 5s of idle
 stalonetray -geometry 2x1+35-530 &          # system tray utility
 keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
-xautolock -detectsleep & 
+xautolock -detectsleep &                    # screenlocker prefs are in xresources
 urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME' &
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/.dwm/startdwm
