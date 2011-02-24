@@ -1,0 +1,7 @@
+# sudoers file.
+%wheel ALL=(ALL) ALL
+%wheel ALL = (ALL) NOPASSWD:/usr/bin/pacman
+%wheel ALL = (ALL) NOPASSWD:/sbin/shutdown
+%wheel ALL = (ALL) NOPASSWD:/sbin/poweroff
+%wheel ALL = (ALL) NOPASSWD:/usr/sbin/pm-*
+%wheel ALL = (ALL) NOPASSWD:/usr/bin/netcfg2
