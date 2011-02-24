@@ -76,7 +76,7 @@ export HISTFILESIZE=${HISTSIZE} # bash will remember N commands
 export HISTTIMEFORMAT="[%Y-%m-%d - %H:%M:%S] "
 export GREP_OPTIONS='--color=auto' # beautify grep
 export EDITOR=vim
-export http_proxy=http://localhost:8118/
+#export http_proxy=http://localhost:8118/
 export LYNX_LSS=$HOME/.lynx/lynx.lss
 export LYNX_CFG=$HOME/.lynx/lynx.cfg
 
