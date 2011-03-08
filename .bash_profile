@@ -6,7 +6,7 @@
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
 
 # source bashrc
-[ -f .bashrc ] && source $HOME/.bashrc
+[ -f $HOME/.bashrc ] && source $HOME/.bashrc
 
 # auto startx if logging in at VC/1
 if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
