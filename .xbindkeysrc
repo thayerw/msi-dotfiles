@@ -1,0 +1,91 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+#   Mod4 is the Windows meta key
+
+"xbindkeys_show" 
+  Control+Shift + q
+
+# app launcher
+"gmrun"
+  Mod4 + p
+
+# screen session
+"gnome-terminal -e "bash -c 'screen -dRR -S $HOSTNAME'""
+  Mod4 + s
+
+# file manager
+"nautilus"
+  Mod4 + e
+
+# wicd network manager ui
+"wicd-client -n"
+  Mod4 + n
+
+# calculator
+"xcalc"
+  Mod4 + c
+
+# web browser
+"chromium"
+  Mod4 + w
+
+# web browser (private mode)
+"chromium --incognito"
+  Mod4+Shift + w
+
+# alsamixer
+"gnome-terminal -e "alsamixer -g""
+  Mod4 + v
+
+# screenshot
+"scrot %Y%m%d-%H.%M.%S.png -t 280x175 -e 'mv $f $m ~/'"
+  Print
+
+# screenshot (delayed 5s)
+"scrot %Y%m%d-%H.%M.%S.png -t 280x175 -d 5 -e 'mv $f $m ~/'"
+  Shift + Print
+
+# volume up
+#"dvolbar --increase 6"
+#  XF86AudioRaiseVolume
+
+# volume down
+#"dvolbar --decrease 6"
+#  XF86AudioLowerVolume
+
+# volume mute
+#"dvolbar --toggle"
+#  XF86AudioMute
+
+# kill a client window
+"xkill"
+  Control+Shift+Mod1 + k
+
+# lock screen
+"gnome-screensaver-command --lock"
+  Control+Mod1 + l
+
+# reboot
+"sudo shutdown -r now"
+  Control+Mod1 + Delete
+
+# shutdown
+"sudo shutdown -h now"
+  Control+Mod1 + Insert
