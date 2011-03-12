@@ -19,11 +19,16 @@ vbell off           # toggle visual bell
 bell_msg "Bell in window %n ()"
 
 # keybinds
-bindkey "^[Od" prev     # urxvt: change window with ctrl-left
-bindkey "^[Oc" next     # urxvt: change window with ctrl-right
+bindkey "^[Od" prev     # urxvt: move to previous window with ctrl-left
+bindkey "^[Oc" next     # urxvt: move to next window with ctrl-right
+bindkey "^[[1;5D" prev  # gnome-terminal: move to previous window with ctrl-left
+bindkey "^[[1;5C" next  # gnome-terminal: move to next window with ctrl-right
 bind K quit             # C-a-K to quit screen
 bind c screen 1         # make window numbering start at 1
 bind 0 select 10        # zero selects window 10
 
 # statusbar
 hardstatus alwayslastline '%{= dk}[ %{dg}%H %{dk}][%{db}%= %?%-Lw%?%{dy}(%{dB}%n*%f %t%?(%u)%?%{dy})%{= db}%?%+Lw%?%?%= %{dk}][%{dm}%l%{dk}][%{dy} %m/%d %c %{dk}]'
+
+# fix scrollback issues for gnome-terminal, xterm, etc.
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
