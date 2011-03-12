@@ -5,10 +5,10 @@
 
 ! font rendering for libxft applications (openoffice, etc.) 
 Xft.dpi:        96
-Xft.rgba:       none
+Xft.rgba:       rgb
 Xft.autohint:   0
 Xft.hinting:    1
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 Xft.antialias:  1
 
 Xcursor*theme:  Vanilla-DMZ-AA
