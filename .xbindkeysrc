@@ -27,7 +27,8 @@
   Mod4 + p
 
 # screen session
-"gnome-terminal -e "bash -c 'screen -dRR -S $HOSTNAME'""
+#"gnome-terminal -e "bash -c 'screen -dRR -S $HOSTNAME'""
+"urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME'"
   Mod4 + s
 
 # file manager
@@ -43,7 +44,7 @@
   Mod4 + c
 
 # web browser
-"chromium"
+"google-chrome"
   Mod4 + w
 
 # web browser (private mode)
