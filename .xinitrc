@@ -1,6 +1,11 @@
 # ~/.xinitrc
 # Thayer Williams - http://cinderwick.ca
 
+# local dbus session for pesky GTK apps (brasero, nautilus gvfs)
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval `dbus-launch --sh-syntax --exit-with-session`
+fi
+
 xrdb -merge ~/.Xresources                   # load x resource prefs
 xmodmap ~/.xmodmaprc                        # swap some keys around
 xset +fp ~/.fonts                           # add local font path for x apps like dwm 
@@ -14,4 +19,4 @@ keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
 xautolock -detectsleep &                    # screenlocker prefs are in xresources
 urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME' &
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/.dwm/startdwm
+exec ck-launch-session ~/.dwm/startdwm
