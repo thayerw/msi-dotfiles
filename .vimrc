@@ -79,7 +79,7 @@ endif
 " -------------
 
 if has ("gui_running")
-	set guifont=Fixed\ 11 " backslash any spaces
+	set guifont=Consolas\ 11 " backslash any spaces
 	set guioptions-=T   " hide the toolbar
 
 	" Credit to Steve Hall for this function
