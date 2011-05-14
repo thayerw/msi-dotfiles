@@ -13,9 +13,11 @@ Xft.antialias:  1
 
 Xcursor*theme:  Vanilla-DMZ-AA
 
-*font:             -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
-*boldFont:         -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
+!*font:             -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
+!*boldFont:         -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
 
+urxvt*font:             xft:consolas:normal:pixelsize=15
+urxvt*letterSpace:      -2
 urxvt*urgentOnBell:     true
 urxvt*internalBorder:   1
 urxvt*saveLines:        10000
@@ -32,6 +34,7 @@ urxvt*keysym.C-Insert:  perl:matcher
 urxvt*matcher.button:   1
 urxvt*urlLauncher:      vimprobable2
 
+xterm*faceName:         consolas:pixelsize=15
 xterm*bellIsUrgent:     true
 xterm*saveLines:        10000
 xterm*scrollBar:        false
