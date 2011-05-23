@@ -25,7 +25,7 @@ case "$1" in
         case "$2" in
             SLPB)   
                     # screenlock X and go into standby (S3)
-                    DISPLAY=:0 su -c - thayer /usr/bin/slock &
+                    DISPLAY=:0 su -c - thayer "gnome-screensaver-command --lock"
                     /usr/sbin/pm-suspend
 
                     #echo -n mem >/sys/power/state 
@@ -72,7 +72,7 @@ case "$1" in
                 grep -q closed /proc/acpi/button/lid/*/state
                 if [ $? = 0 ]; then
                     # screenlock X and go into standby (S3)
-                    DISPLAY=:0 su -c - thayer /usr/bin/slock &
+                    DISPLAY=:0 su -c - thayer "gnome-screensaver-command --lock"
                     /usr/sbin/pm-suspend
                     #echo -n mem >/sys/power/state
                 fi
