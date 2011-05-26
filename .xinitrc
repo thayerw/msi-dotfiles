@@ -22,4 +22,6 @@ keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
 (sleep 5 && stalonetray) &                  # systray util, delayed for dzen
 urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME' &
-exec ck-launch-session ~/.dwm/startdwm
+#xrandr --output VGA1 --left-of LVDS1 --mode 1024x768
+xrandr --output VGA1 --off
+exec ck-launch-session xmonad
