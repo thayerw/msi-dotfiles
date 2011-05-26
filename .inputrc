@@ -1,0 +1,5 @@
+# file: ~/.inputrc
+# site: http://cinderwick.ca
+
+# ignore case when tab-completing paths
+set completion-ignore-case on
