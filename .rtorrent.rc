@@ -1,24 +1,23 @@
 # ~/.rtorrent.rc
-# Thayer Williams - http://cinderwick.ca
 # vim:nu:ai:si:et:ts=4:sts=4:sw=4:ft=sh:
 
 # storage
 directory = ~/shared/Downloads/Torrents/
 session = ~/shared/Downloads/Torrents/.session/
 
-# schedule = id,start in secs,interval in secs,command to execute
-
-# stop on low disk space
-schedule = low_diskspace,5,60,close_low_diskspace=100M
+# schedule = id,start after x secs,interval in secs,command to execute
 
 # watch a directory for new torrents
-schedule = watch_directory,5,30,load_start=~/shared/Downloads/Torrents/*.torrent
+schedule = watch_directory,10,30,load_start=~/shared/Downloads/Torrents/*.torrent
 
 # stop torrents that have been deleted
-schedule = untied_directory,5,30,stop_untied=
+schedule = untied_directory,10,30,stop_untied=
 
-# stop at ratio 1.0 with at least 200 MB uploaded, or else ratio 2.0
-# schedule = ratio,60,60,"stop_on_ratio=100,200M,200"
+# stop at ratio 1.0 with at least 100 MB uploaded, or else ratio 2.0
+schedule = ratio,60,30,"stop_on_ratio=100,100M,200"
+
+# stop all torrents when disk space is lower than 1GB
+schedule = low_diskspace,10,120,close_low_diskspace=1G
 
 # The ip address reported to the tracker.
 ip = 127.0.0.1
@@ -29,6 +28,4 @@ download_rate = 0
 upload_rate = 32
 port_range = 49282-49282
 port_random = no
-
 encryption = allow_incoming, try_outgoing, enable_retry
-
