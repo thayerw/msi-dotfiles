@@ -17,11 +17,12 @@ xbindkeys                                   # custom hotkeys
 xsetroot -solid darkgrey                    # set root window background
 xautolock &                                 # prefs stored in Xresources
 gnome-screensaver &                         # screensaver daemon, triggered with xautolock
-parcellite &                                # clipboard manager
+clipit &                                    # clipboard manager
 keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
 (sleep 5 && stalonetray) &                  # systray util, delayed for dzen
 urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME' &
 #xrandr --output VGA1 --left-of LVDS1 --mode 1024x768
 xrandr --output VGA1 --off
+#exec ck-launch-session ~/deebus/startdeebus
 exec ck-launch-session xmonad
