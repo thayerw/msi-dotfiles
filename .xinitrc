@@ -16,7 +16,7 @@ xsetroot -cursor_name left_ptr              # sets root xcursor
 xbindkeys                                   # custom hotkeys
 xsetroot -solid darkgrey                    # set root window background
 xautolock &                                 # prefs stored in Xresources
-gnome-screensaver &                         # screensaver daemon, triggered with xautolock
+gnome-screensaver &                         # screensaver daemon, managed w/ xautolock
 clipit &                                    # clipboard manager
 keepassx &                                  # password manager
 dropboxd &                                  # dropbox sync client
